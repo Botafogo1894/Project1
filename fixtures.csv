@@ -1,0 +1,391 @@
+game_week,event_name,home_team_id,home_team_name,home_team_short_name,away_team_id,away_team_name,away_team_short_name
+1,Gameweek 1,1,Arsenal,ARS,9,Leicester,LEI
+1,Gameweek 1,3,Brighton,BHA,11,Man City,MCI
+1,Gameweek 1,5,Chelsea,CHE,4,Burnley,BUR
+1,Gameweek 1,6,Crystal Palace,CRY,8,Huddersfield,HUD
+1,Gameweek 1,7,Everton,EVE,15,Stoke,STK
+1,Gameweek 1,14,Southampton,SOU,16,Swansea,SWA
+1,Gameweek 1,19,West Brom,WBA,2,Bournemouth,BOU
+1,Gameweek 1,18,Watford,WAT,10,Liverpool,LIV
+1,Gameweek 1,13,Newcastle,NEW,17,Spurs,TOT
+1,Gameweek 1,12,Man Utd,MUN,20,West Ham,WHU
+2,Gameweek 2,16,Swansea,SWA,12,Man Utd,MUN
+2,Gameweek 2,2,Bournemouth,BOU,18,Watford,WAT
+2,Gameweek 2,9,Leicester,LEI,3,Brighton,BHA
+2,Gameweek 2,14,Southampton,SOU,20,West Ham,WHU
+2,Gameweek 2,10,Liverpool,LIV,6,Crystal Palace,CRY
+2,Gameweek 2,4,Burnley,BUR,19,West Brom,WBA
+2,Gameweek 2,15,Stoke,STK,1,Arsenal,ARS
+2,Gameweek 2,8,Huddersfield,HUD,13,Newcastle,NEW
+2,Gameweek 2,17,Spurs,TOT,5,Chelsea,CHE
+2,Gameweek 2,11,Man City,MCI,7,Everton,EVE
+2,Gameweek 2,16,Swansea,SWA,12,Man Utd,MUN
+2,Gameweek 2,2,Bournemouth,BOU,18,Watford,WAT
+2,Gameweek 2,9,Leicester,LEI,3,Brighton,BHA
+2,Gameweek 2,14,Southampton,SOU,20,West Ham,WHU
+2,Gameweek 2,10,Liverpool,LIV,6,Crystal Palace,CRY
+2,Gameweek 2,4,Burnley,BUR,19,West Brom,WBA
+2,Gameweek 2,15,Stoke,STK,1,Arsenal,ARS
+2,Gameweek 2,8,Huddersfield,HUD,13,Newcastle,NEW
+2,Gameweek 2,17,Spurs,TOT,5,Chelsea,CHE
+2,Gameweek 2,11,Man City,MCI,7,Everton,EVE
+3,Gameweek 3,2,Bournemouth,BOU,11,Man City,MCI
+3,Gameweek 3,18,Watford,WAT,3,Brighton,BHA
+3,Gameweek 3,13,Newcastle,NEW,20,West Ham,WHU
+3,Gameweek 3,6,Crystal Palace,CRY,16,Swansea,SWA
+3,Gameweek 3,8,Huddersfield,HUD,14,Southampton,SOU
+3,Gameweek 3,12,Man Utd,MUN,9,Leicester,LEI
+3,Gameweek 3,5,Chelsea,CHE,7,Everton,EVE
+3,Gameweek 3,19,West Brom,WBA,15,Stoke,STK
+3,Gameweek 3,10,Liverpool,LIV,1,Arsenal,ARS
+3,Gameweek 3,17,Spurs,TOT,4,Burnley,BUR
+4,Gameweek 4,11,Man City,MCI,10,Liverpool,LIV
+4,Gameweek 4,3,Brighton,BHA,19,West Brom,WBA
+4,Gameweek 4,7,Everton,EVE,17,Spurs,TOT
+4,Gameweek 4,1,Arsenal,ARS,2,Bournemouth,BOU
+4,Gameweek 4,9,Leicester,LEI,5,Chelsea,CHE
+4,Gameweek 4,14,Southampton,SOU,18,Watford,WAT
+4,Gameweek 4,15,Stoke,STK,12,Man Utd,MUN
+4,Gameweek 4,4,Burnley,BUR,6,Crystal Palace,CRY
+4,Gameweek 4,16,Swansea,SWA,13,Newcastle,NEW
+4,Gameweek 4,20,West Ham,WHU,8,Huddersfield,HUD
+5,Gameweek 5,2,Bournemouth,BOU,3,Brighton,BHA
+5,Gameweek 5,6,Crystal Palace,CRY,14,Southampton,SOU
+5,Gameweek 5,8,Huddersfield,HUD,9,Leicester,LEI
+5,Gameweek 5,18,Watford,WAT,11,Man City,MCI
+5,Gameweek 5,19,West Brom,WBA,20,West Ham,WHU
+5,Gameweek 5,13,Newcastle,NEW,15,Stoke,STK
+5,Gameweek 5,10,Liverpool,LIV,4,Burnley,BUR
+5,Gameweek 5,17,Spurs,TOT,16,Swansea,SWA
+5,Gameweek 5,5,Chelsea,CHE,1,Arsenal,ARS
+5,Gameweek 5,12,Man Utd,MUN,7,Everton,EVE
+6,Gameweek 6,20,West Ham,WHU,17,Spurs,TOT
+6,Gameweek 6,16,Swansea,SWA,18,Watford,WAT
+6,Gameweek 6,7,Everton,EVE,2,Bournemouth,BOU
+6,Gameweek 6,4,Burnley,BUR,8,Huddersfield,HUD
+6,Gameweek 6,15,Stoke,STK,5,Chelsea,CHE
+6,Gameweek 6,11,Man City,MCI,6,Crystal Palace,CRY
+6,Gameweek 6,14,Southampton,SOU,12,Man Utd,MUN
+6,Gameweek 6,9,Leicester,LEI,10,Liverpool,LIV
+6,Gameweek 6,3,Brighton,BHA,13,Newcastle,NEW
+6,Gameweek 6,1,Arsenal,ARS,19,West Brom,WBA
+7,Gameweek 7,8,Huddersfield,HUD,17,Spurs,TOT
+7,Gameweek 7,20,West Ham,WHU,16,Swansea,SWA
+7,Gameweek 7,19,West Brom,WBA,18,Watford,WAT
+7,Gameweek 7,15,Stoke,STK,14,Southampton,SOU
+7,Gameweek 7,2,Bournemouth,BOU,9,Leicester,LEI
+7,Gameweek 7,12,Man Utd,MUN,6,Crystal Palace,CRY
+7,Gameweek 7,5,Chelsea,CHE,11,Man City,MCI
+7,Gameweek 7,1,Arsenal,ARS,3,Brighton,BHA
+7,Gameweek 7,7,Everton,EVE,4,Burnley,BUR
+7,Gameweek 7,13,Newcastle,NEW,10,Liverpool,LIV
+8,Gameweek 8,10,Liverpool,LIV,12,Man Utd,MUN
+8,Gameweek 8,14,Southampton,SOU,13,Newcastle,NEW
+8,Gameweek 8,3,Brighton,BHA,7,Everton,EVE
+8,Gameweek 8,6,Crystal Palace,CRY,5,Chelsea,CHE
+8,Gameweek 8,9,Leicester,LEI,19,West Brom,WBA
+8,Gameweek 8,4,Burnley,BUR,20,West Ham,WHU
+8,Gameweek 8,18,Watford,WAT,1,Arsenal,ARS
+8,Gameweek 8,16,Swansea,SWA,8,Huddersfield,HUD
+8,Gameweek 8,17,Spurs,TOT,2,Bournemouth,BOU
+8,Gameweek 8,11,Man City,MCI,15,Stoke,STK
+9,Gameweek 9,14,Southampton,SOU,19,West Brom,WBA
+9,Gameweek 9,15,Stoke,STK,2,Bournemouth,BOU
+9,Gameweek 9,8,Huddersfield,HUD,12,Man Utd,MUN
+9,Gameweek 9,11,Man City,MCI,4,Burnley,BUR
+9,Gameweek 9,20,West Ham,WHU,3,Brighton,BHA
+9,Gameweek 9,7,Everton,EVE,1,Arsenal,ARS
+9,Gameweek 9,17,Spurs,TOT,10,Liverpool,LIV
+9,Gameweek 9,5,Chelsea,CHE,18,Watford,WAT
+9,Gameweek 9,13,Newcastle,NEW,6,Crystal Palace,CRY
+9,Gameweek 9,16,Swansea,SWA,9,Leicester,LEI
+10,Gameweek 10,19,West Brom,WBA,11,Man City,MCI
+10,Gameweek 10,4,Burnley,BUR,13,Newcastle,NEW
+10,Gameweek 10,3,Brighton,BHA,14,Southampton,SOU
+10,Gameweek 10,2,Bournemouth,BOU,5,Chelsea,CHE
+10,Gameweek 10,10,Liverpool,LIV,8,Huddersfield,HUD
+10,Gameweek 10,18,Watford,WAT,15,Stoke,STK
+10,Gameweek 10,12,Man Utd,MUN,17,Spurs,TOT
+10,Gameweek 10,9,Leicester,LEI,7,Everton,EVE
+10,Gameweek 10,6,Crystal Palace,CRY,20,West Ham,WHU
+10,Gameweek 10,1,Arsenal,ARS,16,Swansea,SWA
+11,Gameweek 11,16,Swansea,SWA,3,Brighton,BHA
+11,Gameweek 11,17,Spurs,TOT,6,Crystal Palace,CRY
+11,Gameweek 11,7,Everton,EVE,18,Watford,WAT
+11,Gameweek 11,8,Huddersfield,HUD,19,West Brom,WBA
+11,Gameweek 11,14,Southampton,SOU,4,Burnley,BUR
+11,Gameweek 11,5,Chelsea,CHE,12,Man Utd,MUN
+11,Gameweek 11,13,Newcastle,NEW,2,Bournemouth,BOU
+11,Gameweek 11,20,West Ham,WHU,10,Liverpool,LIV
+11,Gameweek 11,15,Stoke,STK,9,Leicester,LEI
+11,Gameweek 11,11,Man City,MCI,1,Arsenal,ARS
+12,Gameweek 12,4,Burnley,BUR,16,Swansea,SWA
+12,Gameweek 12,6,Crystal Palace,CRY,7,Everton,EVE
+12,Gameweek 12,18,Watford,WAT,20,West Ham,WHU
+12,Gameweek 12,10,Liverpool,LIV,14,Southampton,SOU
+12,Gameweek 12,12,Man Utd,MUN,13,Newcastle,NEW
+12,Gameweek 12,2,Bournemouth,BOU,8,Huddersfield,HUD
+12,Gameweek 12,9,Leicester,LEI,11,Man City,MCI
+12,Gameweek 12,3,Brighton,BHA,15,Stoke,STK
+12,Gameweek 12,1,Arsenal,ARS,17,Spurs,TOT
+12,Gameweek 12,19,West Brom,WBA,5,Chelsea,CHE
+13,Gameweek 13,17,Spurs,TOT,19,West Brom,WBA
+13,Gameweek 13,8,Huddersfield,HUD,11,Man City,MCI
+13,Gameweek 13,6,Crystal Palace,CRY,15,Stoke,STK
+13,Gameweek 13,13,Newcastle,NEW,18,Watford,WAT
+13,Gameweek 13,16,Swansea,SWA,2,Bournemouth,BOU
+13,Gameweek 13,20,West Ham,WHU,9,Leicester,LEI
+13,Gameweek 13,10,Liverpool,LIV,5,Chelsea,CHE
+13,Gameweek 13,12,Man Utd,MUN,3,Brighton,BHA
+13,Gameweek 13,14,Southampton,SOU,7,Everton,EVE
+13,Gameweek 13,4,Burnley,BUR,1,Arsenal,ARS
+14,Gameweek 14,3,Brighton,BHA,6,Crystal Palace,CRY
+14,Gameweek 14,9,Leicester,LEI,17,Spurs,TOT
+14,Gameweek 14,18,Watford,WAT,12,Man Utd,MUN
+14,Gameweek 14,19,West Brom,WBA,13,Newcastle,NEW
+14,Gameweek 14,5,Chelsea,CHE,16,Swansea,SWA
+14,Gameweek 14,1,Arsenal,ARS,8,Huddersfield,HUD
+14,Gameweek 14,7,Everton,EVE,20,West Ham,WHU
+14,Gameweek 14,2,Bournemouth,BOU,4,Burnley,BUR
+14,Gameweek 14,11,Man City,MCI,14,Southampton,SOU
+14,Gameweek 14,15,Stoke,STK,10,Liverpool,LIV
+15,Gameweek 15,18,Watford,WAT,17,Spurs,TOT
+15,Gameweek 15,2,Bournemouth,BOU,14,Southampton,SOU
+15,Gameweek 15,9,Leicester,LEI,4,Burnley,BUR
+15,Gameweek 15,15,Stoke,STK,16,Swansea,SWA
+15,Gameweek 15,7,Everton,EVE,8,Huddersfield,HUD
+15,Gameweek 15,11,Man City,MCI,20,West Ham,WHU
+15,Gameweek 15,3,Brighton,BHA,10,Liverpool,LIV
+15,Gameweek 15,5,Chelsea,CHE,13,Newcastle,NEW
+15,Gameweek 15,19,West Brom,WBA,6,Crystal Palace,CRY
+15,Gameweek 15,1,Arsenal,ARS,12,Man Utd,MUN
+16,Gameweek 16,16,Swansea,SWA,19,West Brom,WBA
+16,Gameweek 16,17,Spurs,TOT,15,Stoke,STK
+16,Gameweek 16,6,Crystal Palace,CRY,2,Bournemouth,BOU
+16,Gameweek 16,8,Huddersfield,HUD,3,Brighton,BHA
+16,Gameweek 16,20,West Ham,WHU,5,Chelsea,CHE
+16,Gameweek 16,12,Man Utd,MUN,11,Man City,MCI
+16,Gameweek 16,4,Burnley,BUR,18,Watford,WAT
+16,Gameweek 16,10,Liverpool,LIV,7,Everton,EVE
+16,Gameweek 16,13,Newcastle,NEW,9,Leicester,LEI
+16,Gameweek 16,14,Southampton,SOU,1,Arsenal,ARS
+17,Gameweek 17,16,Swansea,SWA,11,Man City,MCI
+17,Gameweek 17,8,Huddersfield,HUD,5,Chelsea,CHE
+17,Gameweek 17,4,Burnley,BUR,15,Stoke,STK
+17,Gameweek 17,6,Crystal Palace,CRY,18,Watford,WAT
+17,Gameweek 17,12,Man Utd,MUN,2,Bournemouth,BOU
+17,Gameweek 17,13,Newcastle,NEW,7,Everton,EVE
+17,Gameweek 17,14,Southampton,SOU,9,Leicester,LEI
+17,Gameweek 17,20,West Ham,WHU,1,Arsenal,ARS
+17,Gameweek 17,10,Liverpool,LIV,19,West Brom,WBA
+17,Gameweek 17,17,Spurs,TOT,3,Brighton,BHA
+18,Gameweek 18,19,West Brom,WBA,12,Man Utd,MUN
+18,Gameweek 18,1,Arsenal,ARS,13,Newcastle,NEW
+18,Gameweek 18,9,Leicester,LEI,6,Crystal Palace,CRY
+18,Gameweek 18,3,Brighton,BHA,4,Burnley,BUR
+18,Gameweek 18,15,Stoke,STK,20,West Ham,WHU
+18,Gameweek 18,5,Chelsea,CHE,14,Southampton,SOU
+18,Gameweek 18,18,Watford,WAT,8,Huddersfield,HUD
+18,Gameweek 18,11,Man City,MCI,17,Spurs,TOT
+18,Gameweek 18,2,Bournemouth,BOU,10,Liverpool,LIV
+18,Gameweek 18,7,Everton,EVE,16,Swansea,SWA
+19,Gameweek 19,11,Man City,MCI,2,Bournemouth,BOU
+19,Gameweek 19,14,Southampton,SOU,8,Huddersfield,HUD
+19,Gameweek 19,7,Everton,EVE,5,Chelsea,CHE
+19,Gameweek 19,20,West Ham,WHU,13,Newcastle,NEW
+19,Gameweek 19,9,Leicester,LEI,12,Man Utd,MUN
+19,Gameweek 19,3,Brighton,BHA,18,Watford,WAT
+19,Gameweek 19,1,Arsenal,ARS,10,Liverpool,LIV
+19,Gameweek 19,15,Stoke,STK,19,West Brom,WBA
+19,Gameweek 19,16,Swansea,SWA,6,Crystal Palace,CRY
+19,Gameweek 19,4,Burnley,BUR,17,Spurs,TOT
+20,Gameweek 20,6,Crystal Palace,CRY,1,Arsenal,ARS
+20,Gameweek 20,19,West Brom,WBA,7,Everton,EVE
+20,Gameweek 20,12,Man Utd,MUN,4,Burnley,BUR
+20,Gameweek 20,18,Watford,WAT,9,Leicester,LEI
+20,Gameweek 20,10,Liverpool,LIV,16,Swansea,SWA
+20,Gameweek 20,17,Spurs,TOT,14,Southampton,SOU
+20,Gameweek 20,2,Bournemouth,BOU,20,West Ham,WHU
+20,Gameweek 20,13,Newcastle,NEW,11,Man City,MCI
+20,Gameweek 20,5,Chelsea,CHE,3,Brighton,BHA
+20,Gameweek 20,8,Huddersfield,HUD,15,Stoke,STK
+21,Gameweek 21,13,Newcastle,NEW,3,Brighton,BHA
+21,Gameweek 21,2,Bournemouth,BOU,7,Everton,EVE
+21,Gameweek 21,6,Crystal Palace,CRY,11,Man City,MCI
+21,Gameweek 21,10,Liverpool,LIV,9,Leicester,LEI
+21,Gameweek 21,5,Chelsea,CHE,15,Stoke,STK
+21,Gameweek 21,12,Man Utd,MUN,14,Southampton,SOU
+21,Gameweek 21,17,Spurs,TOT,20,West Ham,WHU
+21,Gameweek 21,8,Huddersfield,HUD,4,Burnley,BUR
+21,Gameweek 21,18,Watford,WAT,16,Swansea,SWA
+21,Gameweek 21,19,West Brom,WBA,1,Arsenal,ARS
+22,Gameweek 22,9,Leicester,LEI,8,Huddersfield,HUD
+22,Gameweek 22,16,Swansea,SWA,17,Spurs,TOT
+22,Gameweek 22,20,West Ham,WHU,19,West Brom,WBA
+22,Gameweek 22,1,Arsenal,ARS,5,Chelsea,CHE
+22,Gameweek 22,7,Everton,EVE,12,Man Utd,MUN
+22,Gameweek 22,11,Man City,MCI,18,Watford,WAT
+22,Gameweek 22,3,Brighton,BHA,2,Bournemouth,BOU
+22,Gameweek 22,14,Southampton,SOU,6,Crystal Palace,CRY
+22,Gameweek 22,4,Burnley,BUR,10,Liverpool,LIV
+22,Gameweek 22,15,Stoke,STK,13,Newcastle,NEW
+23,Gameweek 23,13,Newcastle,NEW,16,Swansea,SWA
+23,Gameweek 23,6,Crystal Palace,CRY,4,Burnley,BUR
+23,Gameweek 23,12,Man Utd,MUN,15,Stoke,STK
+23,Gameweek 23,19,West Brom,WBA,3,Brighton,BHA
+23,Gameweek 23,10,Liverpool,LIV,11,Man City,MCI
+23,Gameweek 23,5,Chelsea,CHE,9,Leicester,LEI
+23,Gameweek 23,18,Watford,WAT,14,Southampton,SOU
+23,Gameweek 23,8,Huddersfield,HUD,20,West Ham,WHU
+23,Gameweek 23,2,Bournemouth,BOU,1,Arsenal,ARS
+23,Gameweek 23,17,Spurs,TOT,7,Everton,EVE
+24,Gameweek 24,3,Brighton,BHA,5,Chelsea,CHE
+24,Gameweek 24,11,Man City,MCI,13,Newcastle,NEW
+24,Gameweek 24,20,West Ham,WHU,2,Bournemouth,BOU
+24,Gameweek 24,9,Leicester,LEI,18,Watford,WAT
+24,Gameweek 24,7,Everton,EVE,19,West Brom,WBA
+24,Gameweek 24,15,Stoke,STK,8,Huddersfield,HUD
+24,Gameweek 24,4,Burnley,BUR,12,Man Utd,MUN
+24,Gameweek 24,14,Southampton,SOU,17,Spurs,TOT
+24,Gameweek 24,16,Swansea,SWA,10,Liverpool,LIV
+24,Gameweek 24,1,Arsenal,ARS,6,Crystal Palace,CRY
+25,Gameweek 25,8,Huddersfield,HUD,10,Liverpool,LIV
+25,Gameweek 25,16,Swansea,SWA,1,Arsenal,ARS
+25,Gameweek 25,20,West Ham,WHU,6,Crystal Palace,CRY
+25,Gameweek 25,5,Chelsea,CHE,2,Bournemouth,BOU
+25,Gameweek 25,13,Newcastle,NEW,4,Burnley,BUR
+25,Gameweek 25,7,Everton,EVE,9,Leicester,LEI
+25,Gameweek 25,14,Southampton,SOU,3,Brighton,BHA
+25,Gameweek 25,15,Stoke,STK,18,Watford,WAT
+25,Gameweek 25,17,Spurs,TOT,12,Man Utd,MUN
+25,Gameweek 25,11,Man City,MCI,19,West Brom,WBA
+26,Gameweek 26,2,Bournemouth,BOU,15,Stoke,STK
+26,Gameweek 26,12,Man Utd,MUN,8,Huddersfield,HUD
+26,Gameweek 26,1,Arsenal,ARS,7,Everton,EVE
+26,Gameweek 26,19,West Brom,WBA,14,Southampton,SOU
+26,Gameweek 26,4,Burnley,BUR,11,Man City,MCI
+26,Gameweek 26,10,Liverpool,LIV,17,Spurs,TOT
+26,Gameweek 26,18,Watford,WAT,5,Chelsea,CHE
+26,Gameweek 26,9,Leicester,LEI,16,Swansea,SWA
+26,Gameweek 26,6,Crystal Palace,CRY,13,Newcastle,NEW
+26,Gameweek 26,3,Brighton,BHA,20,West Ham,WHU
+27,Gameweek 27,5,Chelsea,CHE,19,West Brom,WBA
+27,Gameweek 27,20,West Ham,WHU,18,Watford,WAT
+27,Gameweek 27,16,Swansea,SWA,4,Burnley,BUR
+27,Gameweek 27,11,Man City,MCI,9,Leicester,LEI
+27,Gameweek 27,17,Spurs,TOT,1,Arsenal,ARS
+27,Gameweek 27,8,Huddersfield,HUD,2,Bournemouth,BOU
+27,Gameweek 27,15,Stoke,STK,3,Brighton,BHA
+27,Gameweek 27,7,Everton,EVE,6,Crystal Palace,CRY
+27,Gameweek 27,13,Newcastle,NEW,12,Man Utd,MUN
+27,Gameweek 27,14,Southampton,SOU,10,Liverpool,LIV
+28,Gameweek 28,2,Bournemouth,BOU,13,Newcastle,NEW
+28,Gameweek 28,3,Brighton,BHA,16,Swansea,SWA
+28,Gameweek 28,9,Leicester,LEI,15,Stoke,STK
+28,Gameweek 28,18,Watford,WAT,7,Everton,EVE
+28,Gameweek 28,6,Crystal Palace,CRY,17,Spurs,TOT
+28,Gameweek 28,19,West Brom,WBA,8,Huddersfield,HUD
+28,Gameweek 28,1,Arsenal,ARS,11,Man City,MCI
+28,Gameweek 28,4,Burnley,BUR,14,Southampton,SOU
+28,Gameweek 28,10,Liverpool,LIV,20,West Ham,WHU
+28,Gameweek 28,12,Man Utd,MUN,5,Chelsea,CHE
+29,Gameweek 29,18,Watford,WAT,19,West Brom,WBA
+29,Gameweek 29,10,Liverpool,LIV,13,Newcastle,NEW
+29,Gameweek 29,11,Man City,MCI,5,Chelsea,CHE
+29,Gameweek 29,17,Spurs,TOT,8,Huddersfield,HUD
+29,Gameweek 29,9,Leicester,LEI,2,Bournemouth,BOU
+29,Gameweek 29,6,Crystal Palace,CRY,12,Man Utd,MUN
+29,Gameweek 29,3,Brighton,BHA,1,Arsenal,ARS
+29,Gameweek 29,16,Swansea,SWA,20,West Ham,WHU
+29,Gameweek 29,14,Southampton,SOU,15,Stoke,STK
+29,Gameweek 29,4,Burnley,BUR,7,Everton,EVE
+30,Gameweek 30,7,Everton,EVE,3,Brighton,BHA
+30,Gameweek 30,13,Newcastle,NEW,14,Southampton,SOU
+30,Gameweek 30,8,Huddersfield,HUD,16,Swansea,SWA
+30,Gameweek 30,5,Chelsea,CHE,6,Crystal Palace,CRY
+30,Gameweek 30,19,West Brom,WBA,9,Leicester,LEI
+30,Gameweek 30,12,Man Utd,MUN,10,Liverpool,LIV
+30,Gameweek 30,15,Stoke,STK,11,Man City,MCI
+30,Gameweek 30,2,Bournemouth,BOU,17,Spurs,TOT
+30,Gameweek 30,20,West Ham,WHU,4,Burnley,BUR
+30,Gameweek 30,1,Arsenal,ARS,18,Watford,WAT
+31,Gameweek 31,11,Man City,MCI,3,Brighton,BHA
+31,Gameweek 31,8,Huddersfield,HUD,6,Crystal Palace,CRY
+31,Gameweek 31,10,Liverpool,LIV,18,Watford,WAT
+31,Gameweek 31,15,Stoke,STK,7,Everton,EVE
+31,Gameweek 31,17,Spurs,TOT,13,Newcastle,NEW
+31,Gameweek 31,2,Bournemouth,BOU,19,West Brom,WBA
+31,Gameweek 31,20,West Ham,WHU,12,Man Utd,MUN
+31,Gameweek 31,16,Swansea,SWA,14,Southampton,SOU
+31,Gameweek 31,9,Leicester,LEI,1,Arsenal,ARS
+31,Gameweek 31,4,Burnley,BUR,5,Chelsea,CHE
+32,Gameweek 32,5,Chelsea,CHE,17,Spurs,TOT
+32,Gameweek 32,18,Watford,WAT,2,Bournemouth,BOU
+32,Gameweek 32,3,Brighton,BHA,9,Leicester,LEI
+32,Gameweek 32,6,Crystal Palace,CRY,10,Liverpool,LIV
+32,Gameweek 32,12,Man Utd,MUN,16,Swansea,SWA
+32,Gameweek 32,1,Arsenal,ARS,15,Stoke,STK
+32,Gameweek 32,19,West Brom,WBA,4,Burnley,BUR
+32,Gameweek 32,13,Newcastle,NEW,8,Huddersfield,HUD
+32,Gameweek 32,7,Everton,EVE,11,Man City,MCI
+32,Gameweek 32,20,West Ham,WHU,14,Southampton,SOU
+33,Gameweek 33,2,Bournemouth,BOU,6,Crystal Palace,CRY
+33,Gameweek 33,9,Leicester,LEI,13,Newcastle,NEW
+33,Gameweek 33,15,Stoke,STK,17,Spurs,TOT
+33,Gameweek 33,11,Man City,MCI,12,Man Utd,MUN
+33,Gameweek 33,1,Arsenal,ARS,14,Southampton,SOU
+33,Gameweek 33,5,Chelsea,CHE,20,West Ham,WHU
+33,Gameweek 33,7,Everton,EVE,10,Liverpool,LIV
+33,Gameweek 33,19,West Brom,WBA,16,Swansea,SWA
+33,Gameweek 33,3,Brighton,BHA,8,Huddersfield,HUD
+33,Gameweek 33,18,Watford,WAT,4,Burnley,BUR
+34,Gameweek 34,20,West Ham,WHU,15,Stoke,STK
+34,Gameweek 34,4,Burnley,BUR,9,Leicester,LEI
+34,Gameweek 34,8,Huddersfield,HUD,18,Watford,WAT
+34,Gameweek 34,14,Southampton,SOU,5,Chelsea,CHE
+34,Gameweek 34,16,Swansea,SWA,7,Everton,EVE
+34,Gameweek 34,13,Newcastle,NEW,1,Arsenal,ARS
+34,Gameweek 34,6,Crystal Palace,CRY,3,Brighton,BHA
+34,Gameweek 34,10,Liverpool,LIV,2,Bournemouth,BOU
+34,Gameweek 34,12,Man Utd,MUN,19,West Brom,WBA
+34,Gameweek 34,17,Spurs,TOT,11,Man City,MCI
+35,Gameweek 35,1,Arsenal,ARS,20,West Ham,WHU
+35,Gameweek 35,9,Leicester,LEI,14,Southampton,SOU
+35,Gameweek 35,3,Brighton,BHA,17,Spurs,TOT
+35,Gameweek 35,7,Everton,EVE,13,Newcastle,NEW
+35,Gameweek 35,18,Watford,WAT,6,Crystal Palace,CRY
+35,Gameweek 35,2,Bournemouth,BOU,12,Man Utd,MUN
+35,Gameweek 35,11,Man City,MCI,16,Swansea,SWA
+35,Gameweek 35,5,Chelsea,CHE,8,Huddersfield,HUD
+35,Gameweek 35,19,West Brom,WBA,10,Liverpool,LIV
+35,Gameweek 35,15,Stoke,STK,4,Burnley,BUR
+36,Gameweek 36,8,Huddersfield,HUD,7,Everton,EVE
+36,Gameweek 36,17,Spurs,TOT,18,Watford,WAT
+36,Gameweek 36,16,Swansea,SWA,5,Chelsea,CHE
+36,Gameweek 36,20,West Ham,WHU,11,Man City,MCI
+36,Gameweek 36,6,Crystal Palace,CRY,9,Leicester,LEI
+36,Gameweek 36,12,Man Utd,MUN,1,Arsenal,ARS
+36,Gameweek 36,13,Newcastle,NEW,19,West Brom,WBA
+36,Gameweek 36,14,Southampton,SOU,2,Bournemouth,BOU
+36,Gameweek 36,10,Liverpool,LIV,15,Stoke,STK
+36,Gameweek 36,4,Burnley,BUR,3,Brighton,BHA
+37,Gameweek 37,5,Chelsea,CHE,10,Liverpool,LIV
+37,Gameweek 37,9,Leicester,LEI,20,West Ham,WHU
+37,Gameweek 37,18,Watford,WAT,13,Newcastle,NEW
+37,Gameweek 37,15,Stoke,STK,6,Crystal Palace,CRY
+37,Gameweek 37,3,Brighton,BHA,12,Man Utd,MUN
+37,Gameweek 37,2,Bournemouth,BOU,16,Swansea,SWA
+37,Gameweek 37,1,Arsenal,ARS,4,Burnley,BUR
+37,Gameweek 37,7,Everton,EVE,14,Southampton,SOU
+37,Gameweek 37,19,West Brom,WBA,17,Spurs,TOT
+37,Gameweek 37,11,Man City,MCI,8,Huddersfield,HUD
+38,Gameweek 38,13,Newcastle,NEW,5,Chelsea,CHE
+38,Gameweek 38,10,Liverpool,LIV,3,Brighton,BHA
+38,Gameweek 38,6,Crystal Palace,CRY,19,West Brom,WBA
+38,Gameweek 38,12,Man Utd,MUN,18,Watford,WAT
+38,Gameweek 38,16,Swansea,SWA,15,Stoke,STK
+38,Gameweek 38,8,Huddersfield,HUD,1,Arsenal,ARS
+38,Gameweek 38,14,Southampton,SOU,11,Man City,MCI
+38,Gameweek 38,4,Burnley,BUR,2,Bournemouth,BOU
+38,Gameweek 38,20,West Ham,WHU,7,Everton,EVE
+38,Gameweek 38,17,Spurs,TOT,9,Leicester,LEI
