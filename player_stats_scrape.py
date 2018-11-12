@@ -38,7 +38,7 @@ def team_code(test, all_teams):
                 team['name'] = item['team']['name']
             elif item['team']['id'] == 66 and team['code'] == 1:
                 team['name'] = item['team']['name']
-            elif item['team']['id'] == 62 and team['code'] == 338:
+            elif item['team']['id'] == 62 and team['code'] == 11:
                 team['name'] = item['team']['name']
             elif item['team']['id'] == 338 and team['code'] == 13:
                 team['name'] = item['team']['name']
