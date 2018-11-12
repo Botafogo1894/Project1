@@ -1,64 +1,35 @@
-import json
-import requests
 from models import *
+from EPL_table_scrape import *
+from player_stats_scrape import *
+from sqlalchemy import create_engine
+import pdb
 
+def inst_teams():
+    teams = final_teams_list(url1)
+    empty = []
+    for item in teams:
+        team = Team(position = item['position'], name = item['team']['name'], logo = item['team']['crestUrl'], games_played = item['playedGames'], W = item['won'], D = item['draw'], L = item['lost'], points = item['points'], GF = item['goalsFor'], GA = item['goalsAgainst'], GD = item['goalDifference'], players = [])
+        empty.append(team)
+    return empty
 
-url = "https://fantasy.premierleague.com/drf/bootstrap-static"
+def inst_players():
+    players = final_players_list(player_positions_teams)
+    teams = inst_teams()
+    empty = []
+    pdb.set_trace()
+    for team in teams:
+        for item in players:
+            if team.name == item['team_name']:
+                player = Player(team = team, name = item['name'], position = item['position'], cost = item['cost'], total_points = item['total_points'], roi = item['roi'], bonus = item['bonus'], red_cards = item['red_cards'], minutes = item['minutes'], transfers_out = item['transfers_out'], transfers_in = item['transfers_in'])
+                empty.append(player)
+    return empty
 
-def get_json_data(url):
-    response = requests.get(url)
-    jobs = response.json()
-    return jobs
+engine = create_engine('sqlite:///EPL_fantasy.db')
+Base.metadata.create_all(engine)
 
-#filter out players with less than 330
-all_players = get_json_data(url)['elements']
-all_teams = get_json_data(url)['teams']
-positions = get_json_data(url)['element_types']
+Session = sessionmaker(bind=engine)
+session = Session()
 
-main_players = list(filter(lambda player: player['minutes'] > 330, all_players))
-
-def attach_team_and_position(main_players, all_teams, positons):
-    players = main_players.copy()
-    for team in all_teams:
-        for player in players:
-            if team['code'] == player['team_code']:
-                player['team_name'] = team['name']
-    for position in positions:
-        for player in players:
-            if position['id'] == player['element_type']:
-                player['position'] = position['singular_name']
-    for player in players:
-        if player['status'] == "a":
-            player['status'] = "available"
-        elif player['status'] == "d":
-            player['status'] = "doubtful"
-        elif player['status'] == "i":
-            player['status'] = "injured"
-        elif player['status'] == "s":
-            player['status'] = "suspended"
-    return players
-
-player_positions_teams = attach_team_and_position(main_players, all_teams, positions)
-
-def final_list(player_positions_teams):
-    players = player_positions_teams.copy()
-    for player in players:
-        player['team_code'] = player['team_code']
-        player['team_name'] = player['team_name']
-        player['name'] = player['first_name'] + " " + player['second_name']
-        player['status'] = player['status']
-        player['position'] = player['position']
-        player['cost'] = (player['now_cost'])/10
-        player['total_points'] = player['total_points']
-        player['roi'] = round((player['total_points'] / player['now_cost'])*10), 2)
-        bonus = Column(Integer)
-        red_cards = Column(Integer)
-        minutes = Column(Integer)
-        transfers_out = Column(Integer)
-        transfers_in = Column(Integer)
-
-
-class DataBaseBuilder:
 
 # class DataBaseBuilder:
 #

@@ -1,0 +1,6 @@
+{% for picture in pictures %}
+  <h3>{{picture.city}}, {{picture.country}}</h3>
+  <img src={{picture.picture_url}} width="600em" alt={{picture['city'], picture['country']}}>
+  <br>
+  <strong>Picture ID: {{picture.id}}</strong>
+{% endfor %}
