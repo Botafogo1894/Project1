@@ -29,7 +29,6 @@ class Team(Base):
     code = Column(Integer)
     position = Column(Integer)
     name = Column(String)
-    logo = Column(String)
     GP = Column(Integer)
     W = Column(Integer)
     D = Column(Integer)
@@ -39,6 +38,7 @@ class Team(Base):
     GA = Column(Integer)
     GD = Column(Integer)
     player_points = Column(Integer)
+    logo = Column(String)
     players = relationship('Player', back_populates = 'team')
 
 # class Table(Base):

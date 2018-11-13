@@ -11,6 +11,12 @@ session = Session()
 def roi_top_players():
     return session.query(Player).order_by(Player.roi.desc()).all()
 
+def roi_bottom_players():
+    return session.query(Player).order_by(Player.roi).all()
+
+def average_roi():
+    return round(float(session.query(func.avg(Player.roi)).first()[0]), 2)
+
 def points_top_players():
     return session.query(Player).order_by(Player.total_points.desc()).all()
 
@@ -49,7 +55,13 @@ def build_team_by_roi(budget = 100, count_limit = 3, gk = 2, df = 5, md = 5, fwd
                         money_team.append(player)
                         budget -= player.cost
                         positions[player.position] = positions[player.position] - 1
-    print(budget)
+    final_team = [(item.name, item.position, item.cost) for item in money_team]
+    print('Remaining Budget: ' + str(round(budget, 2)))
+    print('Your AI has picked the following team:')
+    print('GK: '), print([(item[0], item[2]) for item in final_team if item[1] == "Goalkeeper"])
+    print('DF: '), print([(item[0], item[2]) for item in final_team if item[1] == "Defender"])
+    print('MD: '), print([(item[0], item[2])  for item in final_team if item[1] == "Midfielder"])
+    print('FWD: '), print([(item[0], item[2])  for item in final_team if item[1] == "Forward"])
     return money_team
 
 def build_team_by_points(budget = 100, count_limit = 15, gk = 2, df = 5, md = 5, fwd = 3):

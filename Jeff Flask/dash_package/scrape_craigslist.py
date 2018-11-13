@@ -1,13 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
+from dash_package.models import Listing
 import re
-from listing import Listing
+import pdb
 
 class ListingBuilder:
     def run(self):
         cl = CraigsListScraper()
-        listings = []
         cl.webpage_html()
+        listings = []
         for listing_html in cl.listings_html():
             parser = ListingParser(listing_html)
             listing = Listing(title = parser.title(), housing = parser.housing(), neighborhood = parser.neighborhood(), price = parser.price())
@@ -22,7 +23,7 @@ class CraigsListScraper:
 
     def listings_html(self, craigslist_html = None):
         craigslist_html = craigslist_html or self.craigslist_html
-        craigslist_soup = BeautifulSoup(craigslist_html)
+        craigslist_soup = BeautifulSoup(craigslist_html, 'html.parser')
         listings =  craigslist_soup.findAll('li', {'class':"result-row"})
         self.listings = listings
         return self.listings
@@ -44,7 +45,8 @@ class ListingParser:
 
     def price(self, listings = None):
         price = self.parse(self.listing_html, 'price')
-        return int(price[1:])
+        if price:
+            return int(price[1:])
 
     def parse(self, listing_html, criteria):
         result = listing_html.find(class_=re.compile(r'.*%s' % criteria))
