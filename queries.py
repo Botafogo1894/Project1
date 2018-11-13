@@ -26,6 +26,13 @@ def roi_filter_by_position(position, number = 10):
 def points_filter_by_position(position, number = 10):
     return session.query(Player).filter(Player.position == position).order_by(Player.total_points.desc())[:number]
 
+def team_list():
+    return session.query(Team).all()
+
+def player_list():
+    return session.query(Player).all()
+
+
 def build_team_by_roi(budget = 100, count_limit = 3, gk = 2, df = 5, md = 5, fwd = 3):
     money_team = []
     budget = budget

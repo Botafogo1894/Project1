@@ -30,7 +30,7 @@ class Team(Base):
     position = Column(Integer)
     name = Column(String)
     logo = Column(String)
-    games_played = Column(Integer)
+    GP = Column(Integer)
     W = Column(Integer)
     D = Column(Integer)
     L = Column(Integer)

@@ -7,7 +7,7 @@ def inst_teams():
     teams = final_teams_list(url1)
     empty = []
     for item in teams:
-        team = Team(position = item['position'], name = item['team']['name'], logo = item['team']['crestUrl'], games_played = item['playedGames'], W = item['won'], D = item['draw'], L = item['lost'], points = item['points'], GF = item['goalsFor'], GA = item['goalsAgainst'], GD = item['goalDifference'], player_points = 0, players = [])
+        team = Team(position = item['position'], name = item['team']['name'], logo = item['team']['crestUrl'], GP = item['playedGames'], W = item['won'], D = item['draw'], L = item['lost'], points = item['points'], GF = item['goalsFor'], GA = item['goalsAgainst'], GD = item['goalDifference'], player_points = 0, players = [])
         empty.append(team)
     return empty
 
