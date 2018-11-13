@@ -14,7 +14,7 @@ def roi_top_players():
 def roi_bottom_players():
     return session.query(Player).order_by(Player.roi).all()
 
-def average_roi():
+def average__player_roi():
     return round(float(session.query(func.avg(Player.roi)).first()[0]), 2)
 
 def points_top_players():
