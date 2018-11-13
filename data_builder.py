@@ -20,7 +20,7 @@ def inst_players_and_teams():
     for team in teams:
         for item in players:
             if team.name == item['team_name']:
-                player = Player(team = team, name = item['name'], position = item['position'], cost = item['cost'], total_points = item['total_points'], roi = item['roi'], bonus = item['bonus'], red_cards = item['red_cards'], minutes = item['minutes'], transfers_out = item['transfers_out'], transfers_in = item['transfers_in'])
+                player = Player(team = team, name = item['name'], position = item['position'], cost = item['cost'], total_points = item['total_points'], roi = item['roi'], bonus = item['bonus'], red_cards = item['red_cards'], minutes = item['minutes'], status = item['status'], transfers_out = item['transfers_out'], transfers_in = item['transfers_in'])
                 team.players.append(player)
                 team.player_points += item['total_points']
                 players_final.append(player)

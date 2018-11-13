@@ -18,6 +18,7 @@ class Player(Base):
     bonus = Column(Integer)
     red_cards = Column(Integer)
     minutes = Column(Integer)
+    status = Column(String)
     transfers_out = Column(Integer)
     transfers_in = Column(Integer)
 
