@@ -33,9 +33,17 @@ def generate_table(dataframe, max_rows=20):
 
 teamnames = [item.name for item in team_list()]
 team_player_points = [item.player_points for item in team_list()]
+money_team_points = sum([item.total_points for item in build_team_by_roi()])
+average_joes_points = sum([item.total_points for item in build_team_by_points()])
+zach_team = 755
 
 app.layout = html.Div([
     dcc.Tabs(id="tabs", children=[
+        dcc.Tab(label='EPL Table', children=[
+            html.H4(children='Premier League Table'),
+                generate_table(df),
+                        ]
+                ),
         dcc.Tab(label='Player Points Per Team', children=[
             html.Div([
                 dcc.Graph(
@@ -49,20 +57,17 @@ app.layout = html.Div([
                 )
             ])
         ]),
-        dcc.Tab(label='EPL Table', children=[
-            html.H4(children='Premier League Table'),
-                generate_table(df),
-                        ]
-                ),
-        dcc.Tab(label='Tab three', children=[
+        dcc.Tab(label='Money Team Comparison', children=[
                 dcc.Graph(
                     id='example-graph-2',
                     figure={
                         'data': [
-                            {'x': [1, 2, 3], 'y': [2, 4, 3],
-                                'type': 'bar', 'name': 'SF'},
-                            {'x': [1, 2, 3], 'y': [5, 4, 3],
-                             'type': 'bar', 'name': u'Montréal'},
+                            {'x': ['Money Team'], 'y': [money_team_points],
+                                'type': 'bar', 'name': 'Money Team'},
+                            {'x': ["AVG Joe's Team"], 'y': [average_joes_points],
+                             'type': 'bar', 'name': 'AVG Joe'},
+                             {'x': ["Zach's Team"], 'y': [zach_team],
+                              'type': 'bar', 'name': 'Zach'}
                         ]
                     }
                 )
