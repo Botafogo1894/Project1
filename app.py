@@ -190,25 +190,62 @@ app.layout = html.Div([
                 html.Div([
                     dash_table.DataTable(
                         id='EPL_table',
-                        columns=[{"name": i, "id": i} for i in df.columns[2:-1]],
+                        columns=[{"name": i.title(), "id": i} for i in df.columns[2:-1]],
                         data=df.to_dict("rows"),
-                        style_cell={'textAlign': 'center'})
+                        style_cell={'textAlign': 'center'},
+                         style_header={
+                             'backgroundColor': '#660066',
+                             'fontWeight': 'bold',
+                             'color': 'white'
+                             },
+                        style_data_conditional=[
+                            {
+                                'if': {"row_index": 0},
+                                'backgroundColor': '#3D9970',
+                                'color': 'white',
+                            },
+                            {
+                                'if': {"row_index": 1},
+                                'backgroundColor': '#3D9970',
+                                'color': 'white',
+                            },
+                            {
+                                'if': {"row_index": 2},
+                                'backgroundColor': '#3D9970',
+                                'color': 'white',
+                            },
+                            {
+                                'if': {"row_index": 3},
+                                'backgroundColor': '#33ff99',
+                                'color': 'black',
+                            },
+                            {
+                                'if': {"row_index": 4},
+                                'backgroundColor': '#ffffb3',
+                                'color': 'black',
+                            },
+                            {
+                                'if': {"row_index": 17},
+                                'backgroundColor': '#ff3333',
+                                'color': 'white',
+                            },
+                            {
+                                'if': {"row_index": 18},
+                                'backgroundColor': '#cc0000',
+                                'color': 'white',
+                            },
+                            {
+                                'if': {"row_index": 19},
+                                'backgroundColor': '#cc0000',
+                                'color': 'white',
+                            },
+
+                        ],
+                    )
                 ], className="col")
             ], className="row")
         ], className="container")
                     ]),
-        dcc.Tab(label='Team ROI Analysis', children=[
-            html.Div([
-                dcc.Graph(
-                    id='points per team',
-                    figure= build_trace_player_pts_per_team()
-                ),
-                dcc.Graph(
-                    id='team_roi',
-                    figure= build_trace_avg_roi_per_team()
-                )
-            ])
-        ]),
         dcc.Tab(label='Player ROI Analysis', children=[
             html.Div([
                 dcc.Graph(
@@ -221,7 +258,7 @@ app.layout = html.Div([
                 )
             ])
         ]),
-        dcc.Tab(label='Player/Team ROI Link', children=[
+        dcc.Tab(label='ROI Players Team Distribution', children=[
             html.Div([
                 dcc.Graph(
                     id='top_50',
@@ -231,6 +268,11 @@ app.layout = html.Div([
                     id='bottom_50',
                     figure= bottom50_roi_team_distribution()
                 )
+            ])
+        ]),
+        dcc.Tab(label='Aglorithm Money Team', children=[
+            html.Div([
+                html.Img(src="https://i.imgur.com/tfXTHvB.png"),
             ])
         ]),
         dcc.Tab(label='Money Team vs. AVG Joe Comparison', children=[
