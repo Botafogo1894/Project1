@@ -23,20 +23,20 @@ My friend and I have been playing the **Official English Premier League Fantasy*
 
 **1.** Start with the EPL standings table and arrange teams by table position and look at the aggregate squad points for all their players and see if that correlates directly to the team's table standing.
 
-![header](images/Team Total points ROI.png)
+![header](images/TeamTotalpointsROI.png)
 
 
 >**Questions to answer:**  Are there any surprises and outliers? How can that guide our further investigations?
 
 **2.** Look at each Team's cumulative player ROI and plot that against the number of players that the coach uses on a regular basis **(players who have played at least 350 minutes during the season)** to try to find the teams that have too many expensive and underperforming players and the teams that have a solid core of consistent players that generate a high aggregate ROI.
 
-![header](images/Team num players.png)
+![header](images/Teamnumplayers.png)
 
 >**Questions to answer:** Are there any surprises and outliers? How can that guide our further investigations?  Where are those diamonds in the rust hiding? Which teams should we try to avoid buying players from?
 
 **3.** After identifying which teams provide a cumulative ROI, it is time to zoom in on the individual players. We can think of the team as the stock sector and the players as individual stocks. The plan is to isolate a list of players with the highest ROI and write our algorithm logic for picking the most optimal combination of individual players.
 
-![header](images/Player Total points vs Cost.png)
+![header](images/PlayerTotalpointsCost.png)
 
 
  Looking at the scatter plot of Player Cost vs. Player total fantasy points above, we would want our AI to pick players who appear as west-north as possible on the plot. Note, that we would also want to include some of the top players from the east-north corner of the plot since these would be some of the star league players who generate a lot of points, and even though they are a bit expensive, they still end up with a good ROI.
@@ -49,9 +49,9 @@ My friend and I have been playing the **Official English Premier League Fantasy*
 
 >In the Pie Charts below we can see a distribution of the teams with the most overpriced players versus the teams with the most undervalued players.
 
-![header](images/Top 50 Pie chart.png)
+![header](images/Top50Piechart.png)
 
-![header](images/Bottom 50 Pie.png)
+![header](images/Bottom50Pie.png)
 
 **5.** Now it's time for the most fun part - writing the actual `python algorithm` and **comparing the results of the AI picks to what an average person might pick** as their team.  
 
@@ -103,13 +103,13 @@ def build_team_by_roi(budget = 100, count_limit = 3, gk = 2, df = 5, md = 5, fwd
 
 **5.** Now that both algorithms are build and the code was executed, **let's compare the results of our AI Team vs. the AVG Joe team vs. Random Classmate team** to see which one performed best and by what margin. The bar-plot below demonstrates our results. Our team scored a total of **944 points vs only 812 total points for the AVG team**, which is a whoopping 132pt difference! **Success!**
 
-![header](images/AI smart Picks comaprison.png)
+![header](images/AIsmartPickscomaprison.png)
 
 >**Questions to answer:**  Did our Algorithm return the highest ROI team?  Did it beat the others by a significant margin? Did our Algorithm successfully pick players from some middle of the table teams, which we initially identified as undervalued? Did the AVG Joe pick more of the expensive overpriced players from the top teams?
 
 Below we can see that our Algorithm picked a combination of players from most of the high ROI teams that we identified at the beginning of our project:
 
-![header](images/AI Team Distribution.png)
+![header](images/AITeamDistribution.png)
 
 
 ### Conclusion:
