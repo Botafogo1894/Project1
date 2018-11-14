@@ -8,6 +8,34 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 
+def get_money_team_objects(budget = 100, count_limit = 3, gk = 2, df = 5, md = 5, fwd = 3):
+    money_team = []
+    budget = budget
+    injured = players_by_status('injured')
+    positions = {'Goalkeeper': gk, 'Defender': df, 'Midfielder': md, 'Forward': fwd}
+    for player in points_top_players():
+            if len(money_team) < count_limit and player not in injured and budget >= player.cost and positions[player.position] > 0:
+                money_team.append(player)
+                budget -= player.cost
+                positions[player.position] = positions[player.position] - 1
+            else:
+                for player in roi_top_players():
+                    if player not in money_team and budget >= player.cost and positions[player.position] > 0:
+                        money_team.append(player)
+                        budget -= player.cost
+                        positions[player.position] = positions[player.position] - 1
+    final_team = [(item.name, item.position, item.cost) for item in money_team]
+    total_points = sum([item.total_points for item in money_team])
+    return money_team
+
+def simple_player_table():
+    table_headers = Player.__table__.columns.keys()[2:-2]
+    row_values = [[item.name for item in get_money_team_objects()], [item.team.name for item in get_money_team_objects()], [item.position for item in get_money_team_objects()], [item.cost for item in get_money_team_objects()], [item.total_points for item in get_money_team_objects()], [item.bonus for item in get_money_team_objects()], [item.minutes for item in get_money_team_objects()], [item.status for item in get_money_team_objects()], [item.roi for item in get_money_team_objects()]]
+    trace = go.Table(
+    header=dict(values=table_headers),
+    cells=dict(values=row_values))
+    return dict(data = [trace])
+
 def roi_top_players():
     return session.query(Player).order_by(Player.roi.desc()).all()
 
@@ -42,11 +70,6 @@ def player_list():
 def build_team_by_roi(budget = 100, count_limit = 3, gk = 2, df = 5, md = 5, fwd = 3):
     money_team = []
     budget = budget
-    count_limit = count_limit
-    gk = gk
-    df = df
-    md = md
-    fwd = fwd
     injured = players_by_status('injured')
     positions = {'Goalkeeper': gk, 'Defender': df, 'Midfielder': md, 'Forward': fwd}
     for player in points_top_players():

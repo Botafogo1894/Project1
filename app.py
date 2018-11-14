@@ -190,7 +190,7 @@ app.layout = html.Div([
                 html.Div([
                     dash_table.DataTable(
                         id='EPL_table',
-                        columns=[{"name": i.title(), "id": i} for i in df.columns[2:-1]],
+                        columns=[{"name": i.upper(), "id": i} for i in df.columns[2:-1]],
                         data=df.to_dict("rows"),
                         style_cell={'textAlign': 'center'},
                          style_header={
@@ -246,6 +246,18 @@ app.layout = html.Div([
             ], className="row")
         ], className="container")
                     ]),
+        dcc.Tab(label='Team ROI Analysis', children=[
+            html.Div([
+                dcc.Graph(
+                    id='points per team',
+                    figure= build_trace_player_pts_per_team()
+                ),
+                dcc.Graph(
+                    id='team_roi',
+                    figure= build_trace_avg_roi_per_team()
+                ),
+            ])
+        ]),
         dcc.Tab(label='Player ROI Analysis', children=[
             html.Div([
                 dcc.Graph(
@@ -270,11 +282,6 @@ app.layout = html.Div([
                 )
             ])
         ]),
-        dcc.Tab(label='Aglorithm Money Team', children=[
-            html.Div([
-                html.Img(src="https://i.imgur.com/tfXTHvB.png"),
-            ])
-        ]),
         dcc.Tab(label='Money Team vs. AVG Joe Comparison', children=[
                 dcc.Graph(
                     id='example-graph-2',
@@ -290,6 +297,12 @@ app.layout = html.Div([
                     figure= avg_joe_team_composition_pie()
                 )
         ]),
+        dcc.Tab(label='Aglorithm Money Team', children=[
+            html.Div([
+                html.Img(src="https://i.imgur.com/tfXTHvB.png")],
+                className="row justify-content-md-center"
+                )
+            ]),
     ])
 ])
 
