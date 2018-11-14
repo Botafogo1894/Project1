@@ -87,6 +87,43 @@ def money_team_composition_pie(title = '<b>Money Team Composition</b>', type = '
     layout = dict(title = title)
     return dict(data = [trace1], layout = layout)
 
+def avg_joe_team_composition_pie(title = '<b>AVG Joe Composition</b>', type = 'pie', name = 'AVG Joe'):
+    avg_joe_counter = Counter([item.team.name for item in build_team_by_points()])
+    y = avg_joe_counter.items()
+    joe_labels = [item[0] for item in y]
+    joe_values = [item[1] for item in y]
+    trace1 = dict(values = joe_values, labels = joe_labels, type = type, name = name )
+    layout = dict(title = title)
+    return dict(data = [trace1], layout = layout)
+
+def top50_roi_team_distribution(title = '<b>Top 50 ROI Players Team Distribution</b>', type = 'pie', name = 'Money Team'):
+    top_50 = Counter([item.team.name for item in roi_top_players()[:50]])
+    bottom_50 = Counter([item.team.name for item in roi_bottom_players()[:50]])
+    x = top_50.items()
+    y = bottom_50.items()
+    top_labels = [item[0] for item in x]
+    top_values = [item[1] for item in x]
+    bottom_labels = [item[0] for item in y]
+    bottom_values = [item[1] for item in y]
+    trace1 = dict(values = top_values, labels = top_labels, type = type, name = name)
+    trace2 = dict(values = bottom_values, labels = bottom_labels, type = type, name = name )
+    layout = dict(title = title)
+    return dict(data = [trace1], layout = layout)
+
+def bottom50_roi_team_distribution(title = '<b>Bottom 50 ROI Players Team Distribution</b>', type = 'pie', name = 'Money Team'):
+    top_50 = Counter([item.team.name for item in roi_top_players()[:50]])
+    bottom_50 = Counter([item.team.name for item in roi_bottom_players()[:50]])
+    x = top_50.items()
+    y = bottom_50.items()
+    top_labels = [item[0] for item in x]
+    top_values = [item[1] for item in x]
+    bottom_labels = [item[0] for item in y]
+    bottom_values = [item[1] for item in y]
+    trace1 = dict(values = top_values, labels = top_labels, type = type, name = name)
+    trace2 = dict(values = bottom_values, labels = bottom_labels, type = type, name = name )
+    layout = dict(title = title)
+    return dict(data = [trace2], layout = layout)
+
 def build_trace_all_players_points(title = '<b>Player Points vs Player Cost</b>', type = 'scatter', mode = 'markers'):
     list_of_player_costs = [item.cost for item in player_list()]
     list_of_player_points = [item.total_points for item in player_list()]
@@ -145,7 +182,7 @@ app.layout = html.Div([
                 dcc.Graph(
                     id='team_roi',
                     figure= build_trace_avg_roi_per_team()
-                ),
+                )
             ])
         ]),
         dcc.Tab(label='Player ROI Analysis', children=[
@@ -157,7 +194,19 @@ app.layout = html.Div([
                 dcc.Graph(
                     id='top_roi',
                     figure= build_trace_top_vs_bottom_roi()
+                )
+            ])
+        ]),
+        dcc.Tab(label='Player/Team ROI Link', children=[
+            html.Div([
+                dcc.Graph(
+                    id='top_50',
+                    figure= top50_roi_team_distribution()
                 ),
+                dcc.Graph(
+                    id='bottom_50',
+                    figure= bottom50_roi_team_distribution()
+                )
             ])
         ]),
         dcc.Tab(label='Money Team vs. AVG Joe Comparison', children=[
@@ -169,6 +218,10 @@ app.layout = html.Div([
                     id='graph-3',
                     figure= money_team_composition_pie()
 
+                ),
+                dcc.Graph(
+                    id='avg_joe_pie',
+                    figure= avg_joe_team_composition_pie()
                 )
         ]),
     ])
