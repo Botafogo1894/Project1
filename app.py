@@ -12,6 +12,9 @@ from collections import Counter
 import plotly.plotly as py
 import plotly.graph_objs as go
 from sqlalchemy import func
+import plotly.plotly as py
+import plotly.graph_objs as go
+import dash_table
 
 
 engine = create_engine('sqlite:///EPL_fantasy.db')
@@ -19,11 +22,21 @@ engine = create_engine('sqlite:///EPL_fantasy.db')
 Session = sessionmaker(bind=engine)
 session = Session()
 
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+external_stylesheets = ['https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', 'https://codepen.io/chriddyp/pen/bWLwgP.css']
+# external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 df = pd.read_sql_table('teams', engine)
+
+def simple_table():
+    table_headers = Team.__table__.columns.keys()[2:-1]
+    row_values = [[item.position for item in team_list()], [item.name for item in team_list()], [item.GP for item in team_list()], [item.W for item in team_list()], [item.D for item in team_list()], [item.L for item in team_list()], [item.points for item in team_list()], [item.GF for item in team_list()], [item.GA for item in team_list()], [item.GD for item in team_list()], [item.player_points for item in team_list()]]
+    trace = go.Table(
+    header=dict(values=table_headers),
+    cells=dict(values=row_values))
+    return dict(data = [trace])
+
 
 def generate_table(dataframe, max_rows=20):
     return html.Table(
@@ -169,10 +182,21 @@ def build_trace_avg_roi_per_team(title = "<b>Cumulative Team ROI</b>", type ='ba
 app.layout = html.Div([
     dcc.Tabs(id="tabs", children=[
         dcc.Tab(label='EPL Table', children=[
-            html.H4(children='Premier League Table'),
-                generate_table(df),
-                        ]
-                ),
+        html.Div([
+            html.Div([
+                html.Div([
+                    html.Img(src="https://i.imgur.com/YENd0zc.png", height = 650, width = 32),
+                ], className="col-"),
+                html.Div([
+                    dash_table.DataTable(
+                        id='EPL_table',
+                        columns=[{"name": i, "id": i} for i in df.columns[2:-1]],
+                        data=df.to_dict("rows"),
+                        style_cell={'textAlign': 'center'})
+                ], className="col")
+            ], className="row")
+        ], className="container")
+                    ]),
         dcc.Tab(label='Team ROI Analysis', children=[
             html.Div([
                 dcc.Graph(
