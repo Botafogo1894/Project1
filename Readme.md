@@ -92,7 +92,7 @@ def build_team_by_roi(budget = 100, count_limit = 3, gk = 2, df = 5, md = 5, fwd
     print('FWD: '), print([(item[0], item[2])  for item in final_team if item[1] == "Forward"])
     print('Total Fantasy Points: ' + str(total_points))
     return money_team
-    ```
+```
 
 * Check if a player is injured and if so, skip that player.
 * Pick the top three star players with the most cumulative league points in the league first. (*We will test the outcome of this condition with different constraints and pick the number of star players that generates the biggest return on investment.*)

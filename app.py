@@ -29,14 +29,13 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 df = pd.read_sql_table('teams', engine)
 
-def simple_table():
+def simple_team_table():
     table_headers = Team.__table__.columns.keys()[2:-1]
     row_values = [[item.position for item in team_list()], [item.name for item in team_list()], [item.GP for item in team_list()], [item.W for item in team_list()], [item.D for item in team_list()], [item.L for item in team_list()], [item.points for item in team_list()], [item.GF for item in team_list()], [item.GA for item in team_list()], [item.GD for item in team_list()], [item.player_points for item in team_list()]]
     trace = go.Table(
     header=dict(values=table_headers),
     cells=dict(values=row_values))
     return dict(data = [trace])
-
 
 def generate_table(dataframe, max_rows=20):
     return html.Table(
