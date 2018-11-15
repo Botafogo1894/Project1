@@ -32,7 +32,7 @@ My friend and I have been playing the **Official English Premier League Fantasy*
 
 <img src="https://github.com/Botafogo1894/Project1/blob/master/Images/Teamnumplayers.png"/>
 
->**Questions to answer:** Are there any surprises and outliers? How can that guide our further investigations?  Where are those diamonds in the rust hiding? Which teams should we try to avoid buying players from?
+>**Questions to answer:** Are there any surprises and outliers? How can that guide our further investigations?  What teams do the "hidden gem" players belong to? Which teams should we try to avoid buying players from?
 
 **3.** After identifying which teams provide a cumulative ROI, it is time to zoom in on the individual players. We can think of the team as the stock sector and the players as individual stocks. The plan is to isolate a list of players with the highest ROI and write our algorithm logic for picking the most optimal combination of individual players.
 
@@ -62,7 +62,15 @@ My friend and I have been playing the **Official English Premier League Fantasy*
 * You need to have at least 1 goalkeeper, 4 defenders, 4 midfielders and 2 strikers and at most **2 goalkeepers, 4 defenders, 5 midfielders, and 3 strikers.**
 * You **cannot have more than 3 players** from the same team.
 
-So, we start our python algorithm with and `if-else` statement for these conditions and **then we add our own conditions and logic on top of that**, so that each time that the algorithm loops through our list of players, it can **use smart logic to make a valid pick** Here is our python code and an explanation of our conditions:
+So, we start our python algorithm with and `if-else` statement for these conditions and **then we add our own conditions and logic on top of that**, so that each time that the algorithm loops through our list of players, it can **use smart logic to make a valid pick** guided by our conditions below:
+
+* Check if a player is injured and if so, skip that player.
+* Pick the top three star players with the most cumulative league points in the league first. (*We will test the outcome of this condition with different constraints and pick the number of star players that generates the biggest return on investment.*)
+* Every time we pick a player and add it to our team, we subtract their cost from our 100MM budget and we add their position and team-name to a list, to make sure that we stop buying players for the positions and the teams that hit their constraint limit.
+* Once the optimal number of expensive superstar players are picked, the Algorithm starts going through the list of players with the highest ROI and tries to get us as many of the top names as we can, until we get close to depleting our budget and filling all of the team positions.
+* Algorithm prints a list of the players it picked at the end and gives us the remaining budget and the total fantasy points of the team.
+
+Here is our `python code` and an explanation of our conditions:
 
 ```python
 def build_team_by_roi(budget = 100, count_limit = 3, gk = 2, df = 5, md = 5, fwd = 3):
@@ -93,14 +101,9 @@ def build_team_by_roi(budget = 100, count_limit = 3, gk = 2, df = 5, md = 5, fwd
     return money_team
 ```
 
-* Check if a player is injured and if so, skip that player.
-* Pick the top three star players with the most cumulative league points in the league first. (*We will test the outcome of this condition with different constraints and pick the number of star players that generates the biggest return on investment.*)
-6. Every time we pick a player and add it to our team, we subtract their cost from our 100MM budget and we add their position and team-name to a list, to make sure that we stop buying players for the positions and the teams that hit their constraint limit.
-7. Once the optimal number of expensive superstar players are picked, the Algorithm starts going through the list of players with the highest ROI and tries to get us as many of the top names as we can, until we get close to depleting our budget and filling all of the team positions.
-8. Algorithm prints a list of the players it picked at the end and gives us the remaining budget and the total fantasy points of the team.
-9. We wrote a similar algorithm for the AVG Joe team, which focuses more on star players and players from big teams, who are often overpriced and might not return the highest cumulative ROI for our limited budget of 100M.
+>**Note** We wrote a similar algorithm for the AVG Joe team, which focuses more on star players and players from big teams, who are often overpriced and might not return the highest cumulative ROI for our limited budget of 100M.
 
-**5.** Now that both algorithms are build and the code was executed, **let's compare the results of our AI Team vs. the AVG Joe team vs. Random Classmate team** to see which one performed best and by what margin. The bar-plot below demonstrates our results. Our team scored a total of **944 points vs only 812 total points for the AVG team**, which is a whoopping 132pt difference! **Success!**
+**5.** Now that both algorithms are build and the code was executed, **let's compare the results of our AI Team vs. the AVG Joe team vs. a random Classmate team** to see which one performed best and by what margin. The bar-plot below demonstrates our results. Our team scored a total of **944 points vs only 812 total points for the AVG team**, which is a whoopping 132pt difference! **Success!**
 
 <img src="https://github.com/Botafogo1894/Project1/blob/master/Images/AIsmartPickscomaprison.png"/>
 
