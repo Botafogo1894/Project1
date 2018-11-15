@@ -28,14 +28,6 @@ def get_money_team_objects(budget = 100, count_limit = 3, gk = 2, df = 5, md = 5
     total_points = sum([item.total_points for item in money_team])
     return money_team
 
-def simple_player_table():
-    table_headers = Player.__table__.columns.keys()[2:-2]
-    row_values = [[item.name for item in get_money_team_objects()], [item.team.name for item in get_money_team_objects()], [item.position for item in get_money_team_objects()], [item.cost for item in get_money_team_objects()], [item.total_points for item in get_money_team_objects()], [item.bonus for item in get_money_team_objects()], [item.minutes for item in get_money_team_objects()], [item.status for item in get_money_team_objects()], [item.roi for item in get_money_team_objects()]]
-    trace = go.Table(
-    header=dict(values=table_headers),
-    cells=dict(values=row_values))
-    return dict(data = [trace])
-
 def roi_top_players():
     return session.query(Player).order_by(Player.roi.desc()).all()
 

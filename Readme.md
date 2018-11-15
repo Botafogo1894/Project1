@@ -23,7 +23,7 @@ My friend and I have been playing the **Official English Premier League Fantasy*
 
 **1.** Start with the EPL standings table and arrange teams by table position and look at the aggregate squad points for all their players and see if that correlates directly to the team's table standing.
 
-![header](images/TeamTotalpointsROI.png)
+<img src="./images/TeamTotalpointsROI.png"/>
 
 
 >**Questions to answer:**  Are there any surprises and outliers? How can that guide our further investigations?
