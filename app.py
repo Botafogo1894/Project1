@@ -9,12 +9,11 @@ from IPython.display import Image, HTML
 from dash.dependencies import Input, Output, State
 from queries import *
 from collections import Counter
-import plotly.plotly as py
-import plotly.graph_objs as go
 from sqlalchemy import func
 import plotly.plotly as py
 import plotly.graph_objs as go
 import dash_table
+import dash_table_experiments as dt
 
 
 engine = create_engine('sqlite:///EPL_fantasy.db')
@@ -29,6 +28,27 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 df = pd.read_sql_table('teams', engine)
 
+players_df = pd.DataFrame(columns= money_team_table()[0], data=money_team_table()[1])
+budget_left = round(100 - players_df.cost.sum(), 2)
+
+layout_table = dict(
+    autosize=True,
+    height=500,
+    font=dict(color="#660066"),
+    titlefont=dict(color="#660066", size='14'),
+    margin=dict(
+        l=15,
+        r=15,
+        b=15,
+        t=15
+    ),
+    hovermode="closest",
+    plot_bgcolor='#fffcfc',
+    paper_bgcolor='#660066',
+    legend=dict(font=dict(size=10), orientation='h'),
+)
+layout_table['font-size'] = '12'
+layout_table['margin-top'] = '10'
 
 def simple_team_table():
     table_headers = Team.__table__.columns.keys()[2:-1]
@@ -93,7 +113,7 @@ def build_trace_money_team_comparison(type = 'bar', title = "<b>AI's Smart Picks
     trace1 = dict(x = ['Money Team'], y = [money_team_points], type = type, name = 'Money Team')
     trace2 = dict(x = ["AVG Joe's Team"], y = [average_joes_points], type = type, name = 'AVG Joe')
     trace3 = dict(x = ["Zach's Team"], y = [zach_team], type = type, name = "Zach's Team")
-    layout = dict(title = title)
+    layout = dict(title = title, xaxis=dict(tickfont=dict(size=16)))
     return dict(data = [trace1, trace2, trace3], layout = layout)
 
 def money_team_composition_pie(title = '<b>Money Team Composition</b>', type = 'pie', name = 'Money Team'):
@@ -190,7 +210,7 @@ def build_trace_avg_roi_per_team(title = "<b>Cumulative Team ROI</b>", type ='ba
 
 app.layout = html.Div([
     dcc.Tabs(id="tabs", children=[
-        dcc.Tab(label='EPL Table', children=[
+        dcc.Tab(label='EPL Table', style={'backgroundColor':'#D0D3D4', 'fontSize': 16, 'font-weight':'bold', 'text-align': 'center'}, children=[
         html.Div([
             html.Div([
                 html.Div([
@@ -255,7 +275,7 @@ app.layout = html.Div([
             ], className="row")
         ], className="container")
                     ]),
-        dcc.Tab(label='Team ROI Analysis', children=[
+        dcc.Tab(label='Team ROI Analysis',  style={'backgroundColor':'#D0D3D4', 'fontSize': 16, 'font-weight':'bold', 'text-align': 'center'}, children=[
             html.Div([
                 dcc.Graph(
                     id='points per team',
@@ -267,7 +287,7 @@ app.layout = html.Div([
                 ),
             ])
         ]),
-        dcc.Tab(label='Player ROI Analysis', children=[
+        dcc.Tab(label='Player ROI Analysis', style={'backgroundColor':'#D0D3D4', 'fontSize': 16, 'font-weight':'bold', 'text-align': 'center'},  children=[
             html.Div([
                 dcc.Graph(
                     id='example-graph',
@@ -279,7 +299,7 @@ app.layout = html.Div([
                 )
             ])
         ]),
-        dcc.Tab(label='ROI Players Team Distribution', children=[
+        dcc.Tab(label='Players Team Distribution by ROI',  style={'backgroundColor':'#D0D3D4', 'fontSize': 16, 'font-weight':'bold', 'text-align': 'center'}, children=[
             html.Div([
                 dcc.Graph(
                     id='top_50',
@@ -291,30 +311,83 @@ app.layout = html.Div([
                 )
             ])
         ]),
-        dcc.Tab(label='Money Team vs. AVG Joe Comparison', children=[
+        dcc.Tab(label='Fantasy Teams Comparison', style={'backgroundColor':'#D0D3D4', 'fontSize': 16, 'font-weight':'bold', 'text-align': 'center'}, children=[
+        html.Div([
                 dcc.Graph(
                     id='example-graph-2',
-                    figure= build_trace_money_team_comparison()
-                ),
+                    figure= build_trace_money_team_comparison(),
+                    className = "twelve columns"),
+                    ], className ='row'),
+        html.Div([
                 dcc.Graph(
                     id='graph-3',
-                    figure= money_team_composition_pie()
-
-                ),
+                    figure= money_team_composition_pie(),
+                    className = "six columns"),
                 dcc.Graph(
                     id='avg_joe_pie',
-                    figure= avg_joe_team_composition_pie()
-                )
-        ]),
-        dcc.Tab(label='Aglorithm Money Team', children=[
+                    figure= avg_joe_team_composition_pie(),
+                    className = "six columns"),
+                    ], className ='row'),
+                ]),
+dcc.Tab(label='Money Team Stats', style={'backgroundColor':'#D0D3D4', 'fontSize': 16, 'font-weight':'bold', 'text-align': 'center'}, children=[
+    html.Div([
+        html.Div([
+            html.H1(children = "Money Team Fantasy View",
+                    style={'backgroundColor':'#350d2e', 'color': 'white', 'fontSize': 22, 'font-weight':'bold', 'text-align': 'center', 'marginBottom': 10, 'marginTop': 12}, className = "six columns"),
+            html.H1(children = "Money Team Player Stats",
+                    style={'backgroundColor':'#350d2e', 'color': 'white', 'fontSize': 22, 'font-weight':'bold', 'text-align': 'center', 'marginBottom': 10, 'marginTop': 12}, className = "six columns")
+                    ], className = 'row'),
+        # Selectors
+        html.Div([
+            html.H1(children = "Remaining Bugdet:   " + str(budget_left) + "M",
+                    style={'color': '#350d2e', 'fontSize': 20, 'font-weight':'bold', 'text-align': 'center', 'marginBottom': 10, 'marginTop': 12}, className = "six columns"),
+            dcc.Checklist(id = 'positions',
+                        options=[
+                            {'label': 'Goalkeepers', 'value': 'Goalkeeper'},
+                            {'label': 'Defenders', 'value': 'Defender'},
+                            {'label': 'Midfielders', 'value': 'Midfielder'},
+                            {'label': 'Forwards', 'value': 'Forward'},
+                        ],
+                        values=['Goalkeeper', 'Defender', "Midfielder",  'Forward'],
+                        labelStyle={'display': 'inline-block'},
+                        style={'margin': 10, 'color': 'black', 'text-align': 'center', 'fontSize': 20},
+                        className='six columns')
+                        ], className = 'row'),
+
+        html.Div([
+            html.Img(src="https://i.imgur.com/tfXTHvB.png", height = 620, width = 320, className="six columns"),
             html.Div([
-                html.Img(src="https://i.imgur.com/tfXTHvB.png")],
-                className="row justify-content-md-center"
-                )
-            ]),
+                dt.DataTable(
+                    rows=players_df.to_dict('records'),
+                    columns=players_df.columns,
+                    min_height=580,
+                    # row_selectable=True,
+                    # filterable=True,
+                    # sortable=True,
+                    selected_row_indices=[],
+                    id='Players'),
+            ],
+            style = layout_table,
+            className="six columns"
+        ),
+            #                 style_cell={'textAlign': 'center'},
+            #                  style_header={'backgroundColor': '#660066','fontWeight': 'bold', 'color': 'white'}, className="six columns")
+            ], className = 'row')
+    ])
+]),
     ])
 ])
 
+@app.callback(
+    Output('Players', 'rows'),
+     [Input('positions', 'values')])
+def update_selected_row_indices(position):
+    map_aux = players_df.copy()
+
+    # Position filter
+    map_aux = map_aux[map_aux["position"].isin(position)]
+    rows = map_aux.to_dict('records')
+    return rows
 
 if __name__ == '__main__':
     app.run_server(debug=True)

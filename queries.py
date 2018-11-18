@@ -106,3 +106,9 @@ def build_team_by_points(budget = 100, count_limit = 15, gk = 2, df = 5, md = 5,
     print('FWD: '), print([(item[0], item[2])  for item in final_team if item[1] == "Forward"])
     print('Total Fantasy Points: ' + str(total_points))
     return money_team
+
+def money_team_table():
+    keys = Player.__table__.columns.keys()
+    headers = [keys[3], 'team', keys[4],keys[5], 'points', keys[8], keys[10], 'ROI']
+    rows = [[item.name, item.team.name, item.position, item.cost, item.total_points, item.bonus, item.minutes, item.roi] for item in get_money_team_objects()]
+    return [headers, rows]
